@@ -10,8 +10,8 @@ class TaskViewSet(APIView):
     serializer_class = TaskSerializer
     
     def get(self, request, format=None):
-        todos = Task.objects.filter()
-        serializer = TaskSerializer(todos, many=True)
+        tasks = Task.objects.filter()
+        serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
     
     
@@ -25,8 +25,8 @@ class TaskViewSet(APIView):
 class TaskDetailsViewSet(APIView):
     def get(self, request, pk):
         try:
-            todos = Task.objects.filter(id=pk)
-            serializer = TaskSerializer(todos, many=True)
+            tasks = Task.objects.filter(id=pk)
+            serializer = TaskSerializer(tasks, many=True)
             return Response(serializer.data)
         except Task.DoesNotExist:
             raise status.HTTP_404_NOT_FOUND
@@ -40,16 +40,15 @@ class TaskDetailsViewSet(APIView):
         
     
     def delete(self, request, pk, format=None):
-        todo = self.get_queryset(pk)
-        todo.delete()
+        task = self.get_queryset(pk)
+        task.delete()
         return Response(status.HTTP_204_NO_CONTENT)
     
     
     def patch(self, request, pk, format=None):
-        todoItem_object = self.get_queryset(pk)
-        print('pk ', todoItem_object)
+        task_object = self.get_queryset(pk)
 
-        serializer = TaskSerializer(todoItem_object, data=request.data, partial=True)
+        serializer = TaskSerializer(task_object, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

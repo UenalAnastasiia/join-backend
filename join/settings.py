@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-f7=0fb#s0i4u&a21n)-=%npu^q_-#xap&qld&+4#+eootzzc!w
 DEBUG = True
 
 ALLOWED_HOSTS = ['anastasiiarest.pythonanywhere.com',
-                 '127.0.0.1']
+                 '127.0.0.1',
+                 'localhost'
+]
 
 
 # Application definition
@@ -39,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tasks',
-    'rest_framework'
+    'login',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +135,11 @@ MEDIA_ROOT = '/home/anastasiiarest/join/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/anastasiiarest/join/static'
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}

@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -20,3 +21,6 @@ class Task(models.Model):
     
     def editor_data(self):
         return {'username': self.editor.username, 'first_name': self.editor.first_name, 'last_name': self.editor.last_name}
+    
+    def __str__(self):
+        return self.title

@@ -5,8 +5,8 @@ from django.db import models
 
 class Choices(models.Model):
     CATEGORY_LIST = ((1, 'Frontend'), (2, 'Backend'), (3, 'Design'), (4, 'Marketing'), (5, 'Backoffice'), (6, 'Other'))
-    PRIORITY_LIST = ((1, 'urgent'), (2, 'medium'), (3, 'low'))
-    STATUS_LIST = ((1, 'To do'), (2, 'In progress'), (3, 'Awaiting Feedback'), (4, 'Done'))
+    PRIORITY_LIST = ((1, 'urgent'), (2, 'medium'), (3, 'low'), (4, 'Archived'))
+    STATUS_LIST = ((1, 'To do'), (2, 'In progress'), (3, 'Awaiting Feedback'), (4, 'Done'), (5, 'Archived'))
 
 class Task(models.Model):
     editor = models.ForeignKey(User, related_name='editor', on_delete=models.CASCADE)

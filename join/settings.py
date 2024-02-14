@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'tasks',
     'login',
     'users',
+    'contacts',
     'rest_framework',
     'rest_framework.authtoken',
 ]

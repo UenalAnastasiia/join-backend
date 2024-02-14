@@ -45,4 +45,4 @@ class TaskSerializer(serializers.ModelSerializer ):
     status = ChoiceField(choices=Choices.STATUS_LIST)
     class Meta:
         model = Task
-        fields = ['id', 'title', 'description', 'due_date', 'editor', 'editor_data', 'category', 'priority', 'status', 'assigned_to']
+        fields = ['id', 'title', 'description', 'due_date', 'editor', 'editor_data', 'category', 'priority', 'status', 'assigned_to', 'color']

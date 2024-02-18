@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path
+from board_status.views import BoardStatusViewSet
 from contacts.views import ContactDetailsViewSet, ContactViewSet
 from login.views import LoginView, Logout
 from tasks.views import TaskDetailsViewSet, TaskViewSet
@@ -18,4 +19,5 @@ urlpatterns = [
     path('users/<int:pk>/', UserDetailsViewSet.as_view()),
     path('contacts/', ContactViewSet.as_view()),
     path('contacts/<int:pk>/', ContactDetailsViewSet.as_view()),
+    path('status/', BoardStatusViewSet.as_view()),
 ]

@@ -1,3 +1,6 @@
+from os import error
+from xmlrpc.client import ResponseError
+from django.views.defaults import ERROR_400_TEMPLATE_NAME
 from rest_framework.views import APIView
 from .serializers import TaskSerializer
 from .models import Task
@@ -53,4 +56,5 @@ class TaskDetailsViewSet(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(status.HTTP_400_BAD_REQUEST)
+        return Response(error)
+        #return Response(status.HTTP_400_BAD_REQUEST)

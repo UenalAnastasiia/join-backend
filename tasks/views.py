@@ -13,7 +13,7 @@ class TaskViewSet(APIView):
     serializer_class = TaskSerializer
     
     def get(self, request, format=None):
-        tasks = Task.objects.filter()
+        tasks = Task.objects.all().order_by('due_date')
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
     
@@ -56,5 +56,4 @@ class TaskDetailsViewSet(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(error)
-        #return Response(status.HTTP_400_BAD_REQUEST)
+        return Response(status.HTTP_400_BAD_REQUEST)

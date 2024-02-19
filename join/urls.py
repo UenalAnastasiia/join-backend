@@ -20,4 +20,5 @@ urlpatterns = [
     path('contacts/', ContactViewSet.as_view()),
     path('contacts/<int:pk>/', ContactDetailsViewSet.as_view()),
     path('status/', BoardStatusViewSet.as_view()),
+    path('status/<int:pk>/', BoardStatusViewSet.as_view()),
 ]

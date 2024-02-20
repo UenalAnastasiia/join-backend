@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'login',
     'users',
     'contacts',
+    'register',
     'board_status',
     'rest_framework',
     'rest_framework.authtoken',

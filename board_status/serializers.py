@@ -5,7 +5,6 @@ from .models import BoardStatus
 
 
 class StatusSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = BoardStatus
         fields = ['id', 'name']

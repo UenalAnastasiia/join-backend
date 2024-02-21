@@ -11,12 +11,6 @@ class EditorSerializer(serializers.ModelSerializer):
         
         
 class AssignedToSerializer(serializers.ModelSerializer):
-    # def get_user_full_name(self, obj):
-    #     request = self.context['request']
-    #     user = request.user
-    #     name = user.first_name + " " + user.last_name
-    #     print('name ', name)
-    #     return name
     class Meta:
         model = User
         fields = ['id', 'first_name', 'last_name', 'username', 'email']
@@ -40,7 +34,6 @@ class ChoiceField(serializers.ChoiceField):
 class TaskSerializer(serializers.ModelSerializer ):
     editor = EditorSerializer
     assigned_to = AssignedToSerializer
-    # assigned_to = AssignedToSerializer('get_user_full_name')
     category = ChoiceField(choices=Choices.CATEGORY_LIST)
     priority = ChoiceField(choices=Choices.PRIORITY_LIST)
     status= StatusSerializer

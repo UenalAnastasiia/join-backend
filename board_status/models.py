@@ -5,6 +5,5 @@ class BoardStatus(models.Model):
     name = models.CharField(max_length=20)
     status_data = read_only
     
-    
     def __str__(self):
         return self.name

@@ -11,8 +11,8 @@ class ContactViewSet(APIView):
     """
     Contact Queryset Class
     """
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None):
         """

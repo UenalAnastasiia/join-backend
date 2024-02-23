@@ -14,8 +14,8 @@ class TaskViewSet(APIView):
     """
     Task Queryset Class
     """
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None):
         """

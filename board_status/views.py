@@ -7,8 +7,8 @@ from .serializers import StatusSerializer
 from rest_framework import status
 
 class BoardStatusViewSet(APIView):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None):
         """

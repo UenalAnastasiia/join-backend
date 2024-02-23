@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['anastasiiarest.pythonanywhere.com',
 ]
 
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:4200']
+CORS_ALLOWED_ORIGINS = ['http://localhost:4200', 'https://joina-b265d.web.app']
 
 
 # Application definition
